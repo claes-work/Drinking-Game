@@ -26,7 +26,10 @@ socketio.on('connection', (socket) => {
 
     // receive players
     socket.on("addPlayer", data => {
+        // get the players object length and increase it with one
+        let count = Object.keys(players).length + 1;
         // add player to the players object
+        players['player'+ count] = data
     })
 });
 
