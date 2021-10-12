@@ -7,6 +7,16 @@ const socketio = require('socket.io')(http, {
     pingTimeout: 60000
 });
 
+let players = {
+    player1: {
+        "name": "Sebastian",
+        "color": "green",
+    },
+    player2: {
+        "name": "Adrian",
+        "color": "blue",
+    }
+}
 
 http.listen(3030, () => {
     console.log('Server started on port 3030...');
