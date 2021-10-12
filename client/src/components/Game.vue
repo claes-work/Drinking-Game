@@ -21,6 +21,13 @@ export default {
       this.players = data
     });
   },
+  methods: {
+    // add player to the players object
+    addPlayer(playerObject) {
+      // emit the playerObject to the server.js
+      this.socket.emit("addPlayer", playerObject);
+    }
+  }
 }
 </script>
 
