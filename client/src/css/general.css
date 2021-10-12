@@ -1,0 +1,70 @@
+/***************************************************************/
+/* ---------------------- General Styles --------------------- */
+/***************************************************************/
+
+html, body {
+  margin: 0;
+}
+
+body, #app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", serif;
+}
+
+/***************************************************************/
+/* ---------------------- Theme Colors ----------------------- */
+/***************************************************************/
+
+:root {
+  --text-dark: #333;
+}
+
+/***************************************************************/
+/* ------------------ General Input Styles ------------------- */
+/***************************************************************/
+
+input:focus, textarea:focus {
+  /* TODO: change color when there are theme variables */
+  outline: 2px solid black;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+label {
+  display: block;
+  position: relative;
+}
+
+input {
+  border: none;
+}
+
+/***************************************************************/
+/* ------------------- General Text Styles ------------------- */
+/***************************************************************/
+
+
+/***************************************************************/
+/* --------------- General Image & Icon Styles --------------- */
+/***************************************************************/
+
+.bc-atts {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

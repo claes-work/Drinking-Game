@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import './css/general.css'
 import Game from './components/Game.vue'
 
 export default {
