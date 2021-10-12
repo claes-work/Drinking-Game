@@ -18,6 +18,18 @@ let players = {
     }
 }
 
+// new socket connection
+socketio.on('connection', (socket) => {
+
+    // emit all players to the client
+    socket.emit("players", players);
+
+    // receive players
+    socket.on("addPlayer", data => {
+        // add player to the players object
+    })
+});
+
 http.listen(3030, () => {
     console.log('Server started on port 3030...');
 });
