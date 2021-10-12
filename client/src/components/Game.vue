@@ -4,7 +4,13 @@
 
 <script>
 export default {
-  name: 'Game'
+  name: 'Game',
+  data () {
+    return {
+      socket: {},
+      players: {},
+    }
+  }
 }
 </script>
 
