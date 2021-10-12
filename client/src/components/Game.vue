@@ -1,5 +1,8 @@
 <template>
-  <div></div>
+  <div>
+    <p>{{players}}</p>
+    <button @click="addPlayer">Push Player</button>
+  </div>
 </template>
 
 <script>
@@ -23,7 +26,11 @@ export default {
   },
   methods: {
     // add player to the players object
-    addPlayer(playerObject) {
+    addPlayer() {
+      let playerObject = {
+        "name": "Tom",
+        "color": "orange",
+      }
       // emit the playerObject to the server.js
       this.socket.emit("addPlayer", playerObject);
     }
