@@ -15,6 +15,12 @@ export default {
   created () {
     this.socket = io("http://192.168.0.104:3030/");
   },
+  mounted () {
+    // receive players from the server.js
+    this.socket.on("players", data => {
+      this.players = data
+    });
+  },
 }
 </script>
 
