@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import io from "socket.io-client"
 export default {
   name: 'Game',
   data () {
@@ -10,7 +11,10 @@ export default {
       socket: {},
       players: {},
     }
-  }
+  },
+  created () {
+    this.socket = io("http://192.168.0.104:3030/");
+  },
 }
 </script>
 
