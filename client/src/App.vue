@@ -4,9 +4,9 @@
 
 <script>
 import './css/general.css';
-import Join from './components/Join.vue'
-import Room from './components/Room.vue'
-import Game from './components/Game.vue'
+import Join from './components/templates/Join.vue'
+import Room from './components/templates/Room.vue'
+import Game from './components/templates/Game.vue'
 import io from "socket.io-client";
 
 export default {
