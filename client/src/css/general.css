@@ -2,6 +2,11 @@
 /* ---------------------- General Styles --------------------- */
 /***************************************************************/
 
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", serif;
+}
+
 html, body {
   margin: 0;
 }
@@ -11,9 +16,16 @@ body, #app, .section {
   min-height: 100vh;
 }
 
-* {
-  box-sizing: border-box;
-  font-family: "Segoe UI", serif;
+.section.join { background-color: blue; }
+.section.room { background-color: green; }
+.section.game { background-color: orange; }
+
+.container {
+  width: 100%;
+  max-width: 360px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 /***************************************************************/
@@ -73,14 +85,3 @@ input {
 /* ----------------- General Element Styles ------------------ */
 /***************************************************************/
 
-.section.join {
-  background-color: blue;
-}
-
-.section.room {
-  background-color: green;
-}
-
-.section.game {
-  background-color: orange;
-}
