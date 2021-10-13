@@ -28,6 +28,14 @@ body, #app, .section {
   padding: 0 15px;
 }
 
+.form-wrapper {
+  width: 100%;
+  height: 500px;
+}
+
+.form-wrapper.create { background-color: red; }
+.form-wrapper.join { background-color: purple; }
+
 /***************************************************************/
 /* ---------------------- Theme Colors ----------------------- */
 /***************************************************************/
