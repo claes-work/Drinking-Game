@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="section join">
 
   </div>
 </template>
@@ -15,6 +15,11 @@ export default {
   },
   created () {
     this.socket = io("http://192.168.0.104:3030/");
+  },
+  methods: {
+    changeComponent (){
+      this.$emit("nextComponent", "Join");
+    }
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="section game">
     <p>{{players}}</p>
     <button @click="addPlayer">Push Player</button>
   </div>
@@ -27,13 +27,16 @@ export default {
   methods: {
     // add player to the players object
     addPlayer() {
-      let playerObject = {
-        "name": "Tom",
-        "color": "orange",
-      }
-      // emit the playerObject to the server.js
-      this.socket.emit("addPlayer", playerObject);
+        let playerObject = {
+          "name": "Tom",
+          "color": "orange",
+        }
+        // emit the playerObject to the server.js
+        this.socket.emit("addPlayer", playerObject)
     }
+  },
+  changeComponent (){
+    this.$emit("nextComponent", "Game");
   }
 }
 </script>
