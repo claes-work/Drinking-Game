@@ -1,13 +1,20 @@
 <template>
   <div class="section room">
-    <div class="container"></div>
+    <div class="container">
+      <Player></Player>
+    </div>
   </div>
 </template>
 
 <script>
 import io from "socket.io-client"
+import Player from "../partials/Player";
+
 export default {
   name: 'Room',
+  components: {
+    Player,
+  },
   data () {
     return {
       socket: {},
