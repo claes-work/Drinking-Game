@@ -1,12 +1,15 @@
 const express = require('express');
 const http = require('http').Server(express);
-const socketio = require('socket.io')(http, {
+const io = require('socket.io')(http, {
     cors: {
         origin: "*"
     },
     pingTimeout: 60000
 });
 
+/*********************************************************************/
+/* -------------------------- Variables ---------------------------- */
+/*********************************************************************/
 
 let players = {
     player1: {
@@ -19,23 +22,21 @@ let players = {
     }
 }
 
-
 /**
  * Start a new socket connection
  */
-socketio.on('connection', (socket) => {
-    updatePlayers(socket)
+io.on('connection', (socket) => {
+    updatePlayers()
     addPlayer(socket);
 });
 
 
 /**
  * Emit the players object to the client
- * @param socket
  */
-function updatePlayers(socket) {
+function updatePlayers() {
     // emit all players to the client
-    socket.emit("players", players);
+    io.emit("players", players);
 }
 
 
@@ -51,7 +52,7 @@ function addPlayer(socket) {
         // add player to the players object
         players['player'+ count] = data;
         // emit all players to the client
-        socket.emit("players", players);
+        updatePlayers();
     })
 }
 
