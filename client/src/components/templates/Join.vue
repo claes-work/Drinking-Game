@@ -38,6 +38,19 @@ export default {
   methods: {
     changeComponent (){
       this.$emit("nextComponent", "Join");
+    },
+    showCreateForm() {
+      this.createForm = true
+      this.buttonWrapper = false
+    },
+    showJoinForm() {
+      this.joinForm = true
+      this.buttonWrapper = false
+    },
+    showButtonWrapper() {
+      this.createForm = false
+      this.joinForm = false
+      this.buttonWrapper = true
     }
   }
 }
