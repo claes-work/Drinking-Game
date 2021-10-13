@@ -1,7 +1,9 @@
 <template>
   <div class="section game">
-    <p>{{players}}</p>
-    <button @click="addPlayer">Push Player</button>
+    <div class="container">
+      <p>{{players}}</p>
+      <button @click="addPlayer">Push Player</button>
+    </div>
   </div>
 </template>
 

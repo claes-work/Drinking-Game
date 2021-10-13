@@ -1,6 +1,6 @@
 <template>
   <div class="section join">
-
+    <div class="container"></div>
   </div>
 </template>
 

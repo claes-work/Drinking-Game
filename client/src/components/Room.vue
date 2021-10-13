@@ -1,6 +1,6 @@
 <template>
   <div class="section room">
-
+    <div class="container"></div>
   </div>
 </template>
 
