@@ -22,7 +22,7 @@ export default {
     }
   },
   created () {
-    this.socket = io("http://192.168.0.104:3030/");
+    this.socket = io(this.$hostname);
   },
   methods: {
     changeComponent (component){

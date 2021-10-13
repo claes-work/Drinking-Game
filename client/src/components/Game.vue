@@ -18,7 +18,7 @@ export default {
     }
   },
   created () {
-    this.socket = io("http://192.168.0.104:3030/");
+    this.socket = io(this.$hostname);
   },
   mounted () {
     // receive players from the server.js
