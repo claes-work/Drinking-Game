@@ -17,7 +17,6 @@ body, #app, .section {
 }
 
 .section.join { background-color: blue; }
-.section.room { background-color: green; }
 .section.game { background-color: orange; }
 
 .container {
@@ -26,6 +25,11 @@ body, #app, .section {
   height: 100%;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.container.flex {
+  display: flex;
+  justify-content: center;
 }
 
 .form-wrapper {
@@ -41,7 +45,31 @@ body, #app, .section {
 /***************************************************************/
 
 :root {
-  --text-dark: #333;
+
+  /* text colors */
+  --text-brown: #A2442F;
+  --text-violet: #7D2850;
+
+  /* background colors */
+  --bc-brown: #CE8153;
+  --bc-grey: #979FB9;
+
+  /* player colors */
+  --red: #F34151;
+  --red-light: #FB9698;
+  --blue: #27A7E8;
+  --blue-light: #80F1FF;
+  --yellow: #FFCF31;
+  --yellow-light: #F9E8AE;
+  --green: #0AD673;
+  --green-light: #A4FEB4;
+  --violet: #C13DCB;
+  --violet-light: #F7AEFF;
+
+  /* button colors */
+  --btn-green: #14BC51;
+  --btn-light-green: #68EE67;
+  --btn-dark-green: #018E39;
 }
 
 /***************************************************************/
@@ -93,3 +121,9 @@ input {
 /* ----------------- General Element Styles ------------------ */
 /***************************************************************/
 
+.myslide {
+  display: block;
+  width: 100%;
+  height: 500px;
+  background-color: aqua;
+}
