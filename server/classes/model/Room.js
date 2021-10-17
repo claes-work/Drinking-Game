@@ -1,4 +1,4 @@
-export class Room {
+class Room {
 
     constructor (
         host,
@@ -8,9 +8,16 @@ export class Room {
         this.roomCode       = this.createRoomCode();
         this.host           = host;
         this.inGame         = inGame;
-        this.playersArray   = playersArray;
+        this.playersArray   = [];
         this.playerCount    = playersArray.length;
         this.availableCards = [];
+        this.colorArray     = [
+            'red',
+            'blue',
+            'yellow',
+            'green',
+            'violet',
+        ];
     }
 
     /**
@@ -30,4 +37,13 @@ export class Room {
         return result;
     }
 
+    /**
+     * Push a new player to the players array
+     * @param playerObject
+     */
+    addPlayer(playerObject) {
+        let stringify = JSON.stringify(playerObject)
+        this.playersArray.push(JSON.parse(stringify))
+    }
 }
+module.exports = Room;
