@@ -25,9 +25,6 @@ class Room {
      * @returns {string}
      */
     createRoomCode() {
-
-        // TODO: test if the room code already exists in a room code object to ensure, that there are no rooms with the same name
-
         let result      = '';
         let chars       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         let charsLength = chars.length;
