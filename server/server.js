@@ -30,7 +30,9 @@ io.on('connection', (socket) => {
         socket.emit('room', room);
     });
 
-
+    socket.on('joinRoom', (data) => {
+        joinRoom(socket, data);
+    });
 });
 
 /**
@@ -77,4 +79,40 @@ function getRoom(roomCode) {
             : room = {}
     }
     return room
+}
+
+
+/**
+ * Check if submitted player data is valid and join an existing room if so
+ * @param socket
+ * @param data
+ */
+function joinRoom(socket, data) {
+
+    // the room object
+    let room = getRoom(data['roomCode'])
+
+    // Check if the entered room code exists
+    if (Object.keys(room).length === 0) {
+        socket.emit('error', 'Bitte geben Sie einen gültigen Raum Code an.');
+        return;
+    }
+
+    // Check if the entered username has been taken
+    for (let i = 0; i < room.playersArray.length; i++) {
+        if (room.playersArray[i]['username'] === data['username']) {
+            socket.emit('error', 'Der von Ihnen eingegebene Name wird bereits verwendet.');
+            return;
+        }
+    }
+
+    let player = new Player(
+        1,
+        data['username'],
+        room.assignColor(),
+        0
+    );
+
+    // push the new player to the submitted rooms players array
+    room.playersArray.push(JSON.parse(JSON.stringify(player)))
 }
