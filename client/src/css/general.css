@@ -16,9 +16,6 @@ body, #app, .section {
   min-height: 100vh;
 }
 
-.section.join { background-color: blue; }
-.section.game { background-color: orange; }
-
 .container {
   width: 100%;
   max-width: 360px;
@@ -37,9 +34,6 @@ body, #app, .section {
   height: 500px;
 }
 
-.form-wrapper.create { background-color: red; }
-.form-wrapper.join { background-color: purple; }
-
 /***************************************************************/
 /* ---------------------- Theme Colors ----------------------- */
 /***************************************************************/
@@ -52,6 +46,7 @@ body, #app, .section {
 
   /* background colors */
   --bc-brown: #CE8153;
+  --bc-divider-brown: #D7A26E;
   --bc-grey: #979FB9;
 
   /* player colors */
@@ -70,6 +65,14 @@ body, #app, .section {
   --btn-green: #14BC51;
   --btn-light-green: #68EE67;
   --btn-dark-green: #018E39;
+  --btn-bordeau: #9D5561;
+  --btn-light-bordeau: #AE5B69;
+  --btn-dark-bordeau: #6C0E43;
+  --btn-brown: #B27E4B;
+  --btn-light-brown: #D7A26E;
+  --btn-dark-brown: #B27E4B;
+
+  --error-message: red;
 }
 
 /***************************************************************/
@@ -78,7 +81,7 @@ body, #app, .section {
 
 input:focus, textarea:focus {
   /* TODO: change color when there are theme variables */
-  outline: 2px solid black;
+  outline: 2px solid transparent;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -102,6 +105,31 @@ input {
   border: none;
 }
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #FFFFFF;
+  opacity: 1;
+  font-size: 16px;
+  font-weight: 600;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #FFFFFF;
+  opacity: 1;
+  font-size: 16px;
+  font-weight: 600;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #FFFFFF;
+  opacity: 1;
+  font-size: 16px;
+  font-weight: 600;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #FFFFFF;
+  opacity: 1;
+  font-size: 16px;
+  font-weight: 600;
+}
+
 /***************************************************************/
 /* ------------------- General Text Styles ------------------- */
 /***************************************************************/
@@ -118,12 +146,34 @@ input {
 }
 
 /***************************************************************/
-/* ----------------- General Element Styles ------------------ */
+/* ------------------ General Button Styles ------------------ */
 /***************************************************************/
 
-.myslide {
-  display: block;
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 500px;
-  background-color: aqua;
+  margin-top: 30px;
+}
+
+.button {
+  width: 100%;
+  height: 45px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.button.green {
+  background-image: linear-gradient(var(--btn-green), var(--btn-light-green));
+  border-bottom: 4px solid var(--btn-dark-green);
+  text-shadow: 0 1px 0 var(--btn-dark-green);
 }
