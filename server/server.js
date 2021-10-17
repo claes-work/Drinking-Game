@@ -63,3 +63,18 @@ function createRoom(username) {
     room.addPlayer(player)
     return room;
 }
+
+
+/**
+ * Compare each room code of the room list array with the room code that is handed over to the function
+ * @param roomCode
+ */
+function getRoom(roomCode) {
+    let room;
+    for (let i = 0; i < roomList.length; i++) {
+        (roomList[i]['roomCode'] === roomCode)
+            ? room = roomList[i]
+            : room = {}
+    }
+    return room
+}
