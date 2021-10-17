@@ -23,6 +23,11 @@ export default {
       errorMessage: ''
     }
   },
+  mounted () {
+    this.socket.on("error", (message) => {
+      this.errorMessage = message;
+    })
+  },
   methods: {
     showMainMenu() {
       this.$parent.showButtonWrapper();
