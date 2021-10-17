@@ -26,6 +26,10 @@ export default {
   methods: {
     showMainMenu() {
       this.$parent.showButtonWrapper();
+    },
+    createRoom() {
+      this.socket.emit("createRoom", this.username)
+      this.username = ''
     }
   }
 }
