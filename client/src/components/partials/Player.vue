@@ -1,25 +1,22 @@
 <template>
   <div class="player-wrapper">
-    <div class="player-color"></div>
+    <div class="player-color" :class="color"></div>
     <div class="player-image"></div>
     <div class="player-name">
-      <p>Sebastian</p>
+      <p>{{playerName}}</p>
     </div>
   </div>
 </template>
 
 <script>
-import io from "socket.io-client"
 export default {
   name: 'Player',
+  props: ['playerName', 'color'],
   data () {
     return {
-      socket: {},
+      socket: this.$parent.socket,
     }
-  },
-  created () {
-    this.socket = io(this.$hostname);
-  },
+  }
 }
 </script>
 
