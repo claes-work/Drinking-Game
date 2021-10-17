@@ -25,11 +25,18 @@ export default {
       errorMessage: '',
     }
   },
-
   methods: {
     showMainMenu () {
       this.$parent.showButtonWrapper ();
     },
+    joinRoom () {
+      this.socket.emit("joinRoom", {
+        "roomCode": this.roomCode.toUpperCase(),
+        "username": this.username.toUpperCase(),
+      })
+      this.roomCode = ''
+      this.username = ''
+    }
   }
 }
 </script>
