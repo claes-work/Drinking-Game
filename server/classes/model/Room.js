@@ -45,5 +45,18 @@ class Room {
         let stringify = JSON.stringify(playerObject)
         this.playersArray.push(JSON.parse(stringify))
     }
+
+    /**
+     * Return a random color from the colorArray and unset it afterwards, so that no other player can get this color
+     * @returns {string}
+     */
+    assignColor() {
+        let colorIndex = Math.floor(Math.random() * this.colorArray.length)
+        let color = this.colorArray[colorIndex];
+        (colorIndex > -1)
+            ? this.colorArray.splice(colorIndex, 1)
+            : 'error'
+        return color;
+    }
 }
 module.exports = Room;
