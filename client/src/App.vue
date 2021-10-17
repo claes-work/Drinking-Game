@@ -4,6 +4,8 @@
 
 <script>
 import './css/general.css';
+import './css/join.css';
+import './css/room.css';
 import Join from './components/templates/Join.vue'
 import Room from './components/templates/Room.vue'
 import Game from './components/templates/Game.vue'
@@ -14,18 +16,26 @@ export default {
   components: {
     Join,
     Room,
-    Game,
+    Game
   },
   data () {
     return {
-      selectedComponent: "Room"
+      socket: {},
+      selectedComponent: "Join",
+      roomData: {},
     }
   },
   created () {
-    this.socket = io(this.$hostname);
+    this.socket = io('http://192.168.2.104:3030/');
+  },
+  mounted() {
+    this.socket.on("room", (room) => {
+      this.roomData = room
+      this.selectedComponent = "Room"
+    })
   },
   methods: {
-    changeComponent (component){
+    changeComponent (component) {
       this.selectedComponent = component;
     }
   }
