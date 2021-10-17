@@ -1,15 +1,19 @@
 <template>
-  <div class="section join">
-    <div class="container">
+  <div class="section wooden">
+    <div class="container flex">
+      <div class="poster bc-atts">
+        <div class="knop left bc-atts"></div>
+        <div class="knop right bc-atts"></div>
 
-      <div class="button-wrapper" v-if="buttonWrapper">
-        <button @click="showCreateForm">Spiel erstellen</button>
-        <button @click="showJoinForm">Spiel beitreten</button>
+      <div class="button-wrapper-join" v-if="buttonWrapper">
+        <button @click="showCreateForm" class="button join big">Spiel erstellen</button>
+        <button @click="showJoinForm" class="button join big">Spiel beitreten</button>
       </div>
 
       <CreateForm v-if="createForm"></CreateForm>
       <JoinForm v-if="joinForm"></JoinForm>
 
+      </div>
     </div>
   </div>
 </template>
@@ -17,7 +21,6 @@
 <script>
 import CreateForm from '../partials/CreateForm.vue'
 import JoinForm from '../partials/JoinForm.vue'
-import io from "socket.io-client"
 export default {
   name: 'Join',
   components: {
@@ -26,17 +29,14 @@ export default {
   },
   data () {
     return {
-      socket: {},
+      socket: this.$parent.socket,
       buttonWrapper: true,
       createForm: false,
       joinForm: false,
     }
   },
-  created () {
-    this.socket = io(this.$hostname);
-  },
   methods: {
-    changeComponent (){
+    changeComponent () {
       this.$emit("nextComponent", "Join");
     },
     showCreateForm() {
