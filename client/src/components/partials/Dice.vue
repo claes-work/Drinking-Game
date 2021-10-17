@@ -5,17 +5,13 @@
 </template>
 
 <script>
-import io from "socket.io-client"
 export default {
   name: 'Dice',
   data () {
     return {
-      socket: {},
+      socket: this.$parent.socket,
     }
-  },
-  created () {
-    this.socket = io(this.$hostname);
-  },
+  }
 }
 </script>
 
